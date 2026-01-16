@@ -1,13 +1,16 @@
 name: deploy the application
 
 on:
-  push:
-    branches: ["main"]
+  workflow-runs: 
+    - workflows : ["continuous integration"]
+      types: [completed]
+
   workflow_dispatch:
 
 jobs:
   deploy-application:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow-runs.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v4
       - name: deploy
