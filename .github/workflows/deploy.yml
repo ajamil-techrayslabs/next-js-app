@@ -2,7 +2,7 @@ name: deploy the application
 
 on:
   workflow_run: 
-    - workflows: ["continuous integration"]
+    workflows: ["continuous integration"]
       types: 
         - completed
       branches: ["main"] 
