@@ -1,40 +1,40 @@
-# name: deploy the application
+# # name: deploy the application
+
+# # on:
+# #   workflow_run: 
+# #     workflows: ["continuous integration"]
+# #       types: 
+# #         - completed
+# #       branches: ["main"] 
+# #   workflow_dispatch:
+
+# # jobs:
+# #   deploy-application:
+# #     runs-on: ubuntu-latest
+# #     if: ${{ github.event.workflow_run.conclusion == 'success' }}
+# #     steps:
+# #       - uses: actions/checkout@v4
+# #       - name: deploy
+# #         run: echo "deploy the application"
+# #         shell: bash
+
+
+
+# name: Continuous Deployment
 
 # on:
-#   workflow_run: 
-#     workflows: ["continuous integration"]
-#       types: 
-#         - completed
-#       branches: ["main"] 
-#   workflow_dispatch:
+#   workflow_run:
+#     workflows: ["continuous integration"] 
+#     types:
+#       - completed
+#     branches:
+#       - main 
 
 # jobs:
-#   deploy-application:
+#   deploy:
 #     runs-on: ubuntu-latest
 #     if: ${{ github.event.workflow_run.conclusion == 'success' }}
 #     steps:
-#       - uses: actions/checkout@v4
-#       - name: deploy
-#         run: echo "deploy the application"
-#         shell: bash
-
-
-
-name: Continuous Deployment
-
-on:
-  workflow_run:
-    workflows: ["continuous integration"] 
-    types:
-      - completed
-    branches:
-      - main 
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    steps:
-      - name: Deploy application
-        run: echo "Deploying application now..."
+#       - name: Deploy application
+#         run: echo "Deploying application now..."
 
