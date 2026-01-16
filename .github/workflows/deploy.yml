@@ -2,9 +2,10 @@ name: deploy the application
 
 on:
   workflow-runs: 
-    - workflows : ["continuous integration"]
-      types: [completed]
-
+    - workflows: ["continuous integration"]
+      types: 
+        - completed
+      branches: ["main"] 
   workflow_dispatch:
 
 jobs:
