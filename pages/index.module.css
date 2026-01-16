@@ -6,6 +6,9 @@
   justify-content: center;
   align-items: center;
 }
+.btn{
+  background-color: black;
+}
 
 .title a {
   color: #0070f3;
